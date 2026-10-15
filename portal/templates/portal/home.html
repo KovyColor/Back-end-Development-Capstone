@@ -1,0 +1,7 @@
+{% extends "portal/base.html" %}
+{% block title %}Home | Capstone Portal{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm"><h1 class="display-5 fw-bold">Media Capstone</h1><p class="lead">A Django portal powered by Flask microservices.</p><a class="btn btn-primary" href="/photos/">Browse gallery</a></div>
+<h2 class="mb-3">Featured pictures</h2>
+<div class="row g-4">{% for picture in pictures %}<div class="col-md-4"><div class="card h-100 shadow-sm"><img src="{{ picture.pic_url }}" class="card-img-top" alt="{{ picture.event_city }}"><div class="card-body"><h5>{{ picture.event_city }}, {{ picture.event_country }}</h5><p class="text-muted">{{ picture.event_date }}</p></div></div></div>{% empty %}<p>No pictures available.</p>{% endfor %}</div>
+{% endblock %}

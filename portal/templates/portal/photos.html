@@ -1,0 +1,6 @@
+{% extends "portal/base.html" %}
+{% block title %}Photos | Capstone Portal{% endblock %}
+{% block content %}
+<h1 class="mb-4">Photo gallery</h1><div class="row row-cols-1 row-cols-md-3 g-4">
+{% for picture in pictures %}<div class="col"><div class="card h-100 shadow-sm"><img src="{{ picture.pic_url }}" class="card-img-top" alt="{{ picture.event_city }}" style="height:220px;object-fit:cover"><div class="card-body"><h5>{{ picture.event_city }}, {{ picture.event_country }}</h5><p class="mb-0">{{ picture.event_date }}</p></div></div></div>{% empty %}<p>No photos available.</p>{% endfor %}
+</div>{% endblock %}
